@@ -1,10 +1,10 @@
 package com.example.demo.controllers;
 
+import com.example.demo.SareetaApplicationTests;
 import com.example.demo.model.persistence.User;
 import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.CreateUserRequest;
-import com.example.demo.utils.TestUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -28,9 +28,9 @@ public class UserControllerTest {
     @Before
     public void setup() {
         userController = new UserController();
-        TestUtils.injectObjects(userController, "userRepository", userRepository);
-        TestUtils.injectObjects(userController, "cartRepository", cartRepository);
-        TestUtils.injectObjects(userController, "bCryptPasswordEncoder", bCryptPasswordEncoder);
+        SareetaApplicationTests.TestUtils.injectObjects(userController, "userRepository", userRepository);
+        SareetaApplicationTests.TestUtils.injectObjects(userController, "cartRepository", cartRepository);
+        SareetaApplicationTests.TestUtils.injectObjects(userController, "bCryptPasswordEncoder", bCryptPasswordEncoder);
     }
 
     @Test

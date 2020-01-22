@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.SareetaApplicationTests;
 import com.example.demo.model.persistence.Cart;
 import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.User;
@@ -7,7 +8,6 @@ import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.ItemRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 import com.example.demo.model.requests.ModifyCartRequest;
-import com.example.demo.utils.TestUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -44,9 +44,9 @@ public class CartControllerTest {
     public void setup() {
         cartController = new CartController();
 
-        TestUtils.injectObjects(cartController, "userRepository", userRepository);
-        TestUtils.injectObjects(cartController, "cartRepository", cartRepository);
-        TestUtils.injectObjects(cartController, "itemRepository", itemRepository);
+        SareetaApplicationTests.TestUtils.injectObjects(cartController, "userRepository", userRepository);
+        SareetaApplicationTests.TestUtils.injectObjects(cartController, "cartRepository", cartRepository);
+        SareetaApplicationTests.TestUtils.injectObjects(cartController, "itemRepository", itemRepository);
 
         user = new User();
         cart = new Cart();

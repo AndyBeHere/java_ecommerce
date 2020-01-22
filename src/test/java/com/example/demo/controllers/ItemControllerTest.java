@@ -1,8 +1,8 @@
 package com.example.demo.controllers;
 
+import com.example.demo.SareetaApplicationTests;
 import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.repositories.ItemRepository;
-import com.example.demo.utils.TestUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -26,7 +26,7 @@ public class ItemControllerTest {
     @Before
     public void setup() {
         itemController = new ItemController();
-        TestUtils.injectObjects(itemController, "itemRepository", itemRepository);
+        SareetaApplicationTests.TestUtils.injectObjects(itemController, "itemRepository", itemRepository);
 
         item = new Item();
         item.setId((long) 1);
